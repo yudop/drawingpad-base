@@ -9,7 +9,7 @@ import android.graphics.Matrix;
  * Wrapper class for the Android Bitmap - used by all filters
  *
  */
-public class AndroidImage {
+public class WorkingImage {
 	
 	//original bitmap image
 	private Bitmap image;
@@ -23,7 +23,7 @@ public class AndroidImage {
 	// RGB Array Color
 	protected int[] colorArray;
 	
-	public AndroidImage(Bitmap img){		
+	public WorkingImage(Bitmap img){		
 		this.image =  img;
 		formatName = "jpg";
 		width = img.getWidth();

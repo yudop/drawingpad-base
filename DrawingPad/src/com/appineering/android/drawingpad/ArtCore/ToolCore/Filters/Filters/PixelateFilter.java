@@ -1,6 +1,6 @@
 package com.appineering.android.drawingpad.ArtCore.ToolCore.Filters.Filters;
 
-import com.appineering.android.drawingpad.ArtCore.ToolCore.Filters.Core.AndroidImage;
+import com.appineering.android.drawingpad.ArtCore.ToolCore.Filters.Core.WorkingImage;
 
 
 /**
@@ -20,7 +20,7 @@ public class PixelateFilter implements IAndroidFilter {
 	private int pixelSize = 16;
 
 	@Override
-	public AndroidImage process(AndroidImage imageIn) {
+	public WorkingImage process(WorkingImage imageIn) {
 		int l_rgb;
 		
 			
@@ -64,7 +64,7 @@ public class PixelateFilter implements IAndroidFilter {
 	 * @param squareSize
 	 * @return
 	 */
-	private int getPredominantRGB(AndroidImage imageIn, int a_x, int a_y, int squareSize){
+	private int getPredominantRGB(WorkingImage imageIn, int a_x, int a_y, int squareSize){
 		int red=-1;
 		int green=-1;
 		int blue=-1;
@@ -106,7 +106,7 @@ public class PixelateFilter implements IAndroidFilter {
 	 * @param squareSize
 	 * @param a_rgb
 	 */
-	private void fillRect(AndroidImage imageIn, int a_x, int a_y, int squareSize, int a_rgb){
+	private void fillRect(WorkingImage imageIn, int a_x, int a_y, int squareSize, int a_rgb){
 		for(int x=a_x; x<a_x+squareSize; x++){
 			for(int y=a_y; y<a_y+squareSize; y++){
 				if(x < imageIn.getWidth() && y < imageIn.getHeight()){
