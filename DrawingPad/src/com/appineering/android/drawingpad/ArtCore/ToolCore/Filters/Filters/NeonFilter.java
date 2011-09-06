@@ -3,7 +3,7 @@ package com.appineering.android.drawingpad.ArtCore.ToolCore.Filters.Filters;
 import android.graphics.Color;
 import android.graphics.Paint;
 
-import com.appineering.android.drawingpad.ArtCore.ToolCore.Filters.Core.AndroidImage;
+import com.appineering.android.drawingpad.ArtCore.ToolCore.Filters.Core.WorkingImage;
 
 
 /**
@@ -21,7 +21,7 @@ import com.appineering.android.drawingpad.ArtCore.ToolCore.Filters.Core.AndroidI
 public class NeonFilter implements IAndroidFilter {
 
 	@Override
-	public AndroidImage process(AndroidImage imageIn) {
+	public WorkingImage process(WorkingImage imageIn) {
 		// Image size
 		int width = imageIn.getWidth();
 		int height = imageIn.getHeight();

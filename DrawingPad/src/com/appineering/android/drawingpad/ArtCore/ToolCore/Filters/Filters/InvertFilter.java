@@ -1,6 +1,6 @@
 package com.appineering.android.drawingpad.ArtCore.ToolCore.Filters.Filters;
 
-import com.appineering.android.drawingpad.ArtCore.ToolCore.Filters.Core.AndroidImage;
+import com.appineering.android.drawingpad.ArtCore.ToolCore.Filters.Core.WorkingImage;
 
 
 /**
@@ -15,7 +15,7 @@ import com.appineering.android.drawingpad.ArtCore.ToolCore.Filters.Core.AndroidI
 public class InvertFilter implements IAndroidFilter{
 
 	@Override
-	public AndroidImage process(AndroidImage imageIn) {
+	public WorkingImage process(WorkingImage imageIn) {
 		int r, g, b;
 		for (int x = 0; x < imageIn.getWidth(); x++) {
 			for (int y = 0; y < imageIn.getHeight(); y++) {

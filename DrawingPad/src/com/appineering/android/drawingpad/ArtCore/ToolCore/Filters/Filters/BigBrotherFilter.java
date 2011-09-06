@@ -1,6 +1,6 @@
 package com.appineering.android.drawingpad.ArtCore.ToolCore.Filters.Filters;
 
-import com.appineering.android.drawingpad.ArtCore.ToolCore.Filters.Core.AndroidImage;
+import com.appineering.android.drawingpad.ArtCore.ToolCore.Filters.Core.WorkingImage;
 
 
 
@@ -40,7 +40,7 @@ public class BigBrotherFilter implements IAndroidFilter {
 	};
 
 	@Override
-	public AndroidImage process(AndroidImage imageIn) {
+	public WorkingImage process(WorkingImage imageIn) {
 		for (int x = 0; x < imageIn.getWidth(); x+=DOT_AREA) {
 			for (int y = 0; y < imageIn.getHeight(); y+=DOT_AREA) {
 				drawTone(x,y,imageIn);
@@ -52,7 +52,7 @@ public class BigBrotherFilter implements IAndroidFilter {
 
 
 
-	private void drawTone(int a_x, int a_y, AndroidImage imageIn){
+	private void drawTone(int a_x, int a_y, WorkingImage imageIn){
 		int l_grayIntensity;
 		int l_x;
 		int l_y;
