@@ -12,7 +12,7 @@ import com.appineering.android.drawingpad.ArtCore.ToolCore.Filters.Core.AndroidI
  * Class to implement a neon style filter for image processing.
  * 
  * The class performs an edge detection process and then makes the background dark/black
- * and makes the outline a bright colour (randomly blue/yellow/red/etc)
+ * and makes the outline a bright color (randomly blue/yellow/red/etc)
  * 
  * Based on the Marvin plugin http://marvinproject.sourceforge.net/en/plugins/edgeDetector.html
  * Originally authored by Danilo Rosetto Mu?oz & Ivan Francisco Coutinho Costa 
@@ -88,7 +88,7 @@ public class NeonFilter implements IAndroidFilter {
 				Paint grayscaleColor = grayMatrix[magnitude];
 
 				// Apply the color into a new image
-				imageIn.setPixelColour(x, y, grayscaleColor.getColor());
+				imageIn.setPixelColor(x, y, grayscaleColor.getColor());
 			}
 		}
 

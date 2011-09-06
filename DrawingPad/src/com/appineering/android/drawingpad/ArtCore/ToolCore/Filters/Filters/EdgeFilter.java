@@ -60,7 +60,7 @@ public class EdgeFilter implements IAndroidFilter {
 				Paint grayscaleColor = grayMatrix[magnitude];
 
 				// Apply the color into a new image
-				imageIn.setPixelColour(x, y, grayscaleColor.getColor());
+				imageIn.setPixelColor(x, y, grayscaleColor.getColor());
 			}
 		}
 

@@ -66,10 +66,10 @@ public class BigBrotherFilter implements IAndroidFilter {
 				l_grayIntensity = 255-(imageIn.getRComponent(a_x+l_x, a_y+l_y));
 
 				if(l_grayIntensity > arrDither[x]){
-					imageIn.setPixelColour(a_x+l_x, a_y+l_y, 0,0,0);
+					imageIn.setPixelColor(a_x+l_x, a_y+l_y, 0,0,0);
 				}
 				else{
-					imageIn.setPixelColour(a_x+l_x, a_y+l_y, 255,255,255);
+					imageIn.setPixelColor(a_x+l_x, a_y+l_y, 255,255,255);
 				}
 			}
 		}

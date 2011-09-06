@@ -21,21 +21,21 @@ public class AndroidImage {
 	private int width, height;
 	
 	// RGB Array Color
-	protected int[] colourArray;
+	protected int[] colorArray;
 	
 	public AndroidImage(Bitmap img){		
 		this.image =  img;
 		formatName = "jpg";
 		width = img.getWidth();
 		height = img.getHeight();
-		updateColourArray();
+		updateColorArray();
 	}
 	
 	
 	/**
-	 * Method to reset the image to a solid colour
+	 * Method to reset the image to a solid color
 	 * 
-	 * @param color - colour to rest the entire image to
+	 * @param color - color to rest the entire image to
 	 */
 	public void clearImage(int color){
 		for(int y=0; y<height; y++){
@@ -47,52 +47,52 @@ public class AndroidImage {
 	
 	
 	/**
-	 * Set colour array for image - called on initialisation
+	 * Set color array for image - called on initialization
 	 * by constructor
 	 * 
 	 * @param bitmap
 	 */
-	private void updateColourArray(){
-		colourArray = new int[width * height];
-		image.getPixels(colourArray, 0, width, 0, 0, width, height);
+	private void updateColorArray(){
+		colorArray = new int[width * height];
+		image.getPixels(colorArray, 0, width, 0, 0, width, height);
 		int r, g, b;
 		for (int y = 0; y < height; y++){
 			for (int x = 0; x < width; x++){
 				int index = y * width + x;
-				r = (colourArray[index] >> 16) & 0xff;
-				g = (colourArray[index] >> 8) & 0xff;
-				b = colourArray[index] & 0xff;
-				colourArray[index] = 0xff000000 | (r << 16) | (g << 8) | b;
+				r = (colorArray[index] >> 16) & 0xff;
+				g = (colorArray[index] >> 8) & 0xff;
+				b = colorArray[index] & 0xff;
+				colorArray[index] = 0xff000000 | (r << 16) | (g << 8) | b;
 			}
 		}
 	}
 	
 	
 	/**
-	 * Method to set the colour of a specific pixel
+	 * Method to set the color of a specific pixel
 	 * 
 	 * @param x
 	 * @param y
-	 * @param colour
+	 * @param color
 	 */
-	public void setPixelColour(int x, int y, int colour){
-		colourArray[((y*image.getWidth()+x))] = colour;
-		image.setPixel(x, y, colour);
+	public void setPixelColor(int x, int y, int color){
+		colorArray[((y*image.getWidth()+x))] = color;
+		image.setPixel(x, y, color);
 	}
 	
 	/**
-	 * Get the colour for a specified pixel
+	 * Get the color for a specified pixel
 	 * 
 	 * @param x
 	 * @param y
-	 * @return colour
+	 * @return color
 	 */
-	public int getPixelColour(int x, int y){
-		return colourArray[y*width+x];
+	public int getPixelColor(int x, int y){
+		return colorArray[y*width+x];
 	}
 	
 	/**
-	 * Set the colour of a specified pixel from an RGB combo
+	 * Set the color of a specified pixel from an RGB combo
 	 * 
 	 * @param x
 	 * @param y
@@ -100,44 +100,44 @@ public class AndroidImage {
 	 * @param c1
 	 * @param c2
 	 */
-	public void setPixelColour(int x, int y, int c0, int c1, int c2){
-		colourArray[((y*image.getWidth()+x))] = (255 << 24) + (c0 << 16) + (c1 << 8) + c2;
-		image.setPixel(x, y, colourArray[((y*image.getWidth()+x))]);
+	public void setPixelColor(int x, int y, int c0, int c1, int c2){
+		colorArray[((y*image.getWidth()+x))] = (255 << 24) + (c0 << 16) + (c1 << 8) + c2;
+		image.setPixel(x, y, colorArray[((y*image.getWidth()+x))]);
 	}
 	
 	/**
-	 * Method to get the RED colour for the specified 
+	 * Method to get the RED color for the specified 
 	 * pixel 
 	 * @param x
 	 * @param y
-	 * @return colour of R
+	 * @return color of R
 	 */
 	public int getRComponent(int x, int y){
-		return (getColourArray()[((y*width+x))]& 0x00FF0000) >>> 16;
+		return (getColorArray()[((y*width+x))]& 0x00FF0000) >>> 16;
 	}
 
 	
 	/**
-	 * Method to get the GREEN colour for the specified 
+	 * Method to get the GREEN color for the specified 
 	 * pixel 
 	 * @param x
 	 * @param y
-	 * @return colour of G
+	 * @return color of G
 	 */
 	public int getGComponent(int x, int y){
-		return (getColourArray()[((y*width+x))]& 0x0000FF00) >>> 8;
+		return (getColorArray()[((y*width+x))]& 0x0000FF00) >>> 8;
 	}
 
 
 	/**
-	 * Method to get the BLUE colour for the specified 
+	 * Method to get the BLUE color for the specified 
 	 * pixel 
 	 * @param x
 	 * @param y
-	 * @return colour of B
+	 * @return color of B
 	 */
 	public int getBComponent(int x, int y){
-		return (getColourArray()[((y*width+x))] & 0x000000FF);
+		return (getColorArray()[((y*width+x))] & 0x000000FF);
 	}
 
 	
@@ -153,7 +153,7 @@ public class AndroidImage {
         image = Bitmap.createBitmap(image, 0, 0, width, height, mtx, true);
         width = image.getWidth();
         height = image.getHeight();
-        updateColourArray();
+        updateColorArray();
 	}
 	
 
@@ -222,18 +222,18 @@ public class AndroidImage {
 
 
 	/**
-	 * @return the colourArray
+	 * @return the colorArray
 	 */
-	public int[] getColourArray() {
-		return colourArray;
+	public int[] getColorArray() {
+		return colorArray;
 	}
 
 
 	/**
-	 * @param colourArray the colourArray to set
+	 * @param colorArray the colorArray to set
 	 */
-	public void setColourArray(int[] colourArray) {
-		this.colourArray = colourArray;
+	public void setColorArray(int[] colorArray) {
+		this.colorArray = colorArray;
 	}
 
 }
