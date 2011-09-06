@@ -6,7 +6,7 @@ import com.appineering.android.drawingpad.ArtCore.ToolCore.Filters.Core.AndroidI
 /**
  * @author robert.hinds
  * 
- * class to invert the colour of an image
+ * class to invert the color of an image
  * 
  * Based on Marvin plugin http://marvinproject.sourceforge.net/en/plugins/invert.html
  * Originally authored by Gabriel Ambr?sio Archanjo
@@ -23,7 +23,7 @@ public class InvertFilter implements IAndroidFilter{
 				g = (255-(int)imageIn.getGComponent(x, y));
 				b = (255-(int)imageIn.getBComponent(x, y));
 
-				imageIn.setPixelColour(x,y,r,g,b);
+				imageIn.setPixelColor(x,y,r,g,b);
 			}
 		}
 		

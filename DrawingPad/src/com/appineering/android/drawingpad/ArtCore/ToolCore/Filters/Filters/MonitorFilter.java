@@ -41,13 +41,13 @@ public class MonitorFilter implements IAndroidFilter {
 				for(int w=0; w<3; w++){
 					if(y+w < imageIn.getHeight()){
 						if(w == 0){
-							imageIn.setPixelColour(x,y+w,r,0,0);
+							imageIn.setPixelColor(x,y+w,r,0,0);
 						}
 						else if(w ==1){
-							imageIn.setPixelColour(x,y+w,0,g,0);
+							imageIn.setPixelColor(x,y+w,0,g,0);
 						}
 						else if(w==2){
-							imageIn.setPixelColour(x,y+w,0,0,b);
+							imageIn.setPixelColor(x,y+w,0,0,b);
 						}
 					}
 				}				

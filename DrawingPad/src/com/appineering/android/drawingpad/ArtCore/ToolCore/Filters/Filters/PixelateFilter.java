@@ -14,7 +14,7 @@ public class PixelateFilter implements IAndroidFilter {
 	
 	/**
 	 * Size of the blurred pixel - the bigger this is, the more
-	 * coarsely the image will be pixelated. The pixelation appearence
+	 * coarsely the image will be pixelated. The pixelation appearance
 	 * will always be different for different size images
 	 */
 	private int pixelSize = 16;
@@ -55,7 +55,7 @@ public class PixelateFilter implements IAndroidFilter {
 
 
 	/**
-	 * Method gets the predominant colour pixels to extrapolate
+	 * Method gets the predominant color pixels to extrapolate
 	 * the pixelation from
 	 * 
 	 * @param imageIn
@@ -110,7 +110,7 @@ public class PixelateFilter implements IAndroidFilter {
 		for(int x=a_x; x<a_x+squareSize; x++){
 			for(int y=a_y; y<a_y+squareSize; y++){
 				if(x < imageIn.getWidth() && y < imageIn.getHeight()){
-					imageIn.setPixelColour(x,y,a_rgb);
+					imageIn.setPixelColor(x,y,a_rgb);
 				}
 			}
 		}					
