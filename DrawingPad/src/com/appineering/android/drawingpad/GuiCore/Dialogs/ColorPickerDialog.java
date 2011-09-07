@@ -1,4 +1,4 @@
-package com.appineering.android.drawingpad.GuiCore;
+package com.appineering.android.drawingpad.GuiCore.Dialogs;
 
 import java.util.Calendar;
 
