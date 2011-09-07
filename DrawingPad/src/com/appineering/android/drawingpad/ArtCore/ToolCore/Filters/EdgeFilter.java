@@ -1,24 +1,21 @@
-package com.appineering.android.drawingpad.ArtCore.ToolCore.Filters.Filters;
+package com.appineering.android.drawingpad.ArtCore.ToolCore.Filters;
 
 import android.graphics.Color;
 import android.graphics.Paint;
 
-import com.appineering.android.drawingpad.ArtCore.ToolCore.Filters.Core.WorkingImage;
+import com.appineering.android.drawingpad.ArtCore.WorkingImage;
 
 
 /**
  * @author robert.hinds
  * 
- * Class to implement a neon style filter for image processing.
- * 
- * The class performs an edge detection process and then makes the background dark/black
- * and makes the outline a bright color (randomly blue/yellow/red/etc)
+ * Class to implement an EdgeDetection filter for image processing.
  * 
  * Based on the Marvin plugin http://marvinproject.sourceforge.net/en/plugins/edgeDetector.html
- * Originally authored by Danilo Rosetto Mu?oz & Ivan Francisco Coutinho Costa 
+ * Originally authored by Danilo Rosetto Mu?oz & Ivan Francisco Coutinho Costa  
  * 
  */
-public class NeonFilter implements IAndroidFilter {
+public class EdgeFilter implements IAndroidFilter {
 
 	@Override
 	public WorkingImage process(WorkingImage imageIn) {
@@ -29,35 +26,10 @@ public class NeonFilter implements IAndroidFilter {
 		Paint grayMatrix[] = new Paint[256];
 
 		// Init gray matrix
-		int outlineCase = 1;
-		double rand = Math.random();
-		if (rand>0.33 && rand<0.66){
-			outlineCase=2;
-		}
-		else if (rand>0.66){
-			outlineCase=3;
-		}
-		for (int i = 255; i >= 0; i--) {
+		for (int i = 0; i <= 255; i++) {
 			Paint p = new Paint();
-			int red=i,green=i,blue=i;
-			if (i>127)
-			{
-				switch(outlineCase){
-				case 1 :
-					red = 255-i;
-					break;
-					
-				case 2 :
-					green = 255-i;
-					break;
-				
-				case 3 :
-					blue = 255-i;
-					break;
-				}
-			}
-			p.setColor(Color.rgb(red, green, blue));
-			grayMatrix[255-i] = p;
+			p.setColor(Color.rgb(i, i, i));
+			grayMatrix[i] = p;
 		}
 
 		int [][] luminance = new int[width][height];

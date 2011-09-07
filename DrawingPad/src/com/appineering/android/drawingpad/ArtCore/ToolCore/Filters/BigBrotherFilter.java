@@ -1,6 +1,6 @@
-package com.appineering.android.drawingpad.ArtCore.ToolCore.Filters.Filters;
+package com.appineering.android.drawingpad.ArtCore.ToolCore.Filters;
 
-import com.appineering.android.drawingpad.ArtCore.ToolCore.Filters.Core.WorkingImage;
+import com.appineering.android.drawingpad.ArtCore.WorkingImage;
 
 
 
