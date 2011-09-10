@@ -29,7 +29,7 @@ import android.util.Log;
 import com.madrobot.io.IOUtils;
 import com.madrobot.math.MathUtils;
 
-public final class BimapUtils {
+public final class BitmapUtils {
 
 	public static void writeBitmapToFile(Bitmap bitmap, File file)
 			throws IOException {

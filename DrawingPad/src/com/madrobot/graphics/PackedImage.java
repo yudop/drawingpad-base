@@ -81,7 +81,7 @@ public class PackedImage {
 	public static PackedImage pack(Bitmap bitmap) {
 		int width = bitmap.getWidth();
 		int height = bitmap.getHeight();
-		int rgb[] = BimapUtils.getPixels(bitmap);
+		int rgb[] = BitmapUtils.getPixels(bitmap);
 		return pack(rgb, width, height);
 
 	}
