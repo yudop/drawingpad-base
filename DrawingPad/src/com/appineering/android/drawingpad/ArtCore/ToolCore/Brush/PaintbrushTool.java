@@ -10,6 +10,11 @@ public class PaintbrushTool extends DrawingTool {
 	private int TOUCH_TOLERANCE;
 	private Path mPath;
 	
+	/**
+	 * The tool for drawing with a smooth path.
+	 * @param event
+	 */
+	
 	public PaintbrushTool(MotionEvent event) {
 		super(event);
 		if(event.getAction() == MotionEvent.ACTION_DOWN){
