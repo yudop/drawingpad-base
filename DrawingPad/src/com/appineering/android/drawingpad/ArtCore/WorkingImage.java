@@ -4,7 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.Matrix;
 
 /**
- * @author robert.hinds
+ * @author mark
  *
  * Wrapper class for the Android Bitmap - used by all filters
  *
